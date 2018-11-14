@@ -1,21 +1,8 @@
-# Create React App example
+# Julbock Down
 
-## How to use
+## How it works
 
-Download the example [or clone the repo](https://github.com/mui-org/material-ui):
+It takes Players and Bets and calculates which Bet is closes to the current date
+or an given enddate.
 
-```bash
-curl https://codeload.github.com/mui-org/material-ui/tar.gz/master | tar -xz --strip=2 material-ui-master/examples/create-react-app
-cd create-react-app
-```
-
-Install it and run:
-
-```bash
-npm install
-npm run start
-```
-
-## The idea behind the example
-
-[Create React App](https://github.com/facebookincubator/create-react-app) with no build configuration.
+The bets end enddate are read from a google sheet.
