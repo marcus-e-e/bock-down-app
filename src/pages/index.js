@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import PlayerTable from './components/PlayerTable';
 import calcWinner from './components/lib/winner';
 import bock from './julbock.png';
-import bockdown from './julbockdown.png';
+import bockdown from './julbockdown.gif';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import { withStyles } from '@material-ui/core/styles';
