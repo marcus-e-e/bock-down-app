@@ -10,6 +10,8 @@ import { withStyles } from '@material-ui/core/styles';
 import withRoot from '../withRoot';
 import config from './components/config';
 import  {getBets, getEndDate} from './components/lib/spreadsheet';
+import twitterico from './twitter.png';
+import instagramico from './instagram.png';
 
 const styles = theme => ({
   root: {
@@ -55,7 +57,6 @@ class Index extends React.Component {
 
   onLoadEndDate = (data, error) => {
     if (data) {
-      console.log(data);
       const endDate = data.endDate;
       this.setState({ endDate });
     } else {
@@ -90,14 +91,18 @@ class Index extends React.Component {
       alignItems="center"
       justify="center"
       >
-      <Grid item xs={12}>
-      <Paper>
-      <img src={this.state.endDate? bockdown : bock} className={classes.bock} alt="bock" />
-      </Paper>
-      </Grid>
-      <Grid item xs={12}>
-      <PlayerTable players={this.state.bets} winnerBet={calcWinner(this.state.bets, this.state.endDate)} />
-      </Grid>
+        <Grid item xs={12}>
+          <Paper>
+            <img src={this.state.endDate? bockdown : bock} className={classes.bock} alt="bock" />
+          </Paper>
+        </Grid>
+        <Grid item xs={12}>
+          <PlayerTable players={this.state.bets} winnerBet={calcWinner(this.state.bets, this.state.endDate)} />
+        </Grid>
+        <Grid item xs={12}>
+          <a href="https://twitter.com/Gavlebocken"><img src={twitterico} alt="twitter" /></a>
+          <a href="https://www.instagram.com/gavlebocken"><img src={instagramico} alt="instagram" /></a>
+        </Grid>
       </Grid>
     );
   }
