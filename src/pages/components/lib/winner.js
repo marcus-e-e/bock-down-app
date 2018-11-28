@@ -1,13 +1,11 @@
-function calcWinner(players, targetDate, stillOpen) {
+function calcWinner(players, targetDate) {
 
   if (!targetDate) targetDate = Date.now();
   else if (targetDate instanceof Date) targetDate = targetDate.getTime();
   else if (!(targetDate instanceof Date)) targetDate = new Date(targetDate).getTime();
 
-console.log("Ist date " + targetDate);
   var nearest = Infinity;
-  var winner = "a";
-  const tableDate = [];
+  var winner;
   var playerDate;
 
   players.forEach(function (player, index) {
@@ -16,10 +14,10 @@ console.log("Ist date " + targetDate);
     var distance = Math.abs(playerDate - targetDate)
     if (distance < nearest) {
       nearest = distance
-      winner = player.name
+      winner = player.bet
     }
   })
-  console.log("Ist it? " +winner);
+  return winner;
 }
 
 export default calcWinner;

@@ -9,6 +9,7 @@ import TableRow from '@material-ui/core/TableRow';
 
 function PlayerTable (props) {
   const playerBets = props.players;
+  const winnerBet = props.winnerBet;
 
   return (
     <Paper>
@@ -20,7 +21,7 @@ function PlayerTable (props) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {playerBets.map(player => (<PlayerBet playerBet={player} key={player.id} />))}
+          {playerBets.map((player, key) => (<PlayerBet playerBet={player} winnerBet={winnerBet} key={key} />))}
         </TableBody>
       </Table>
     </Paper>
